@@ -28,48 +28,43 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ## subtítulo
 
 <p w="1/2">
-Durante el proceso diario de planificación y programación es necesario contar con información, que actualmente se encuentra distribuida y clasificada de manera arbitraria. <carbon-user-multiple />
+Durante el proceso diario de planificación y programación es necesario contar con información, que actualmente se encuentra distribuida y clasificada de manera arbitraria.
 </p>
 
-<div class="absolute top-24 right-30">
+- Resumen diario de novedades
+- Ordenes de trabajo, Historial, Preventivos
+- Planos, Flowsheet, Instrucciones internas
+- Repuestos, Solicitudes de compra
+- PQ de trabajos, Fotos, Manuales
+- Puenteos, MI, MIT, Equipos indisponibles, etc...
+
+<arrow v-click x1="355" y1="315" x2="718" y2="220" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="420" y1="350" x2="718" y2="285" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="420" y1="380" x2="718" y2="350" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="365" y1="415" x2="718" y2="420" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="350" y1="445" x2="718" y2="490" color="#ff595e" width="2.5" arrowSize="1" />
+
+<div v-after class="right-24 bottom-4 w-max-38 absolute">
   <div class="flex items-center">
-    <img src="images/informe-diario.png" class="w-18 m-2">
-    <ul class="text-sm !list-none !mt-0">
-      <li>Resumen diario de novedades</li>
-    </ul>
+    <img src="images/informe-diario.png" class="m-1 w-18">
+    <p class="text-sm ml-2">INTRANET operaciones</p>
   </div>
   <div class="flex items-center">
-    <img src="images/ifs.png" class="w-18 m-2">
-    <ul class="text-sm !list-none !mt-0">
-      <li>Ordenes de trabajo</li>
-      <li>Historial</li>
-      <li>Preventivos</li>
-    </ul>
+    <img src="images/ifs.png" class="m-1 w-18">
+    <p class="text-sm ml-2">IFS</p>
   </div>
   <div class="flex items-center">
-    <img src="images/documentacion.png" class="w-18 m-2">
-    <ul class="text-sm !list-none !mt-0">
-      <li>Planos</li>
-      <li>Flowsheet</li>
-      <li>Instrucciones internas, etc...</li>
-    </ul>
+    <img src="images/documentacion.png" class="m-1 w-18">
+    <p class="text-sm ml-2">Ingenieria Documentación</p>
   </div>
   <div class="flex items-center">
-    <img src="images/sap.png" class="w-18 m-2">
-    <ul class="text-sm !list-none !mt-0">
-      <li>Repuestos</li>
-      <li>Solicitudes de compra</li>
-    </ul>
+    <img src="images/sap.png" class="m-1 w-18">
+    <p class="text-sm ml-2">SAP</p>
   </div>
   <div class="flex items-center">
-    <img src="images/pq-trabajo.png" class="w-18 m-2">
-    <ul class="text-sm !list-none !mt-0">
-      <li>PQ de trabajo</li>
-      <li>Fotos</li>
-      <li>Manuales</li>
-    </ul>
+    <img src="images/pq-trabajo.png" class="m-1 w-18">
+    <p class="text-sm ml-2">Carpeta compartida</p>
   </div>
-  <div class="text-sm mt-2">Puenteos, modificación a la instalación <br> Equipos indisponibles</div>
 </div>
 
 
