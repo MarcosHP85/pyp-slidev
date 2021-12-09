@@ -11,5 +11,9 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "pyp-slidev"
+  "name": "pyp-slidev",
+  "devDependencies": {
+    "@iconify-json/flat-color-icons": "^1.0.1",
+    "@iconify-json/uim": "^1.0.2"
+  }
 }

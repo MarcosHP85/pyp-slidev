@@ -27,7 +27,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ## subtítulo
 
-<p w="1/2">
+<p w="3/4">
 Durante el proceso diario de planificación y programación es necesario contar con información, que actualmente se encuentra distribuida y clasificada de manera arbitraria.
 </p>
 
@@ -38,11 +38,11 @@ Durante el proceso diario de planificación y programación es necesario contar 
 - PQ de trabajos, Fotos, Manuales
 - Puenteos, MI, MIT, Equipos indisponibles, etc...
 
-<arrow v-click x1="355" y1="315" x2="718" y2="220" color="#ff595e" width="2.5" arrowSize="1" />
-<arrow v-after x1="420" y1="350" x2="718" y2="285" color="#ff595e" width="2.5" arrowSize="1" />
-<arrow v-after x1="420" y1="380" x2="718" y2="350" color="#ff595e" width="2.5" arrowSize="1" />
-<arrow v-after x1="365" y1="415" x2="718" y2="420" color="#ff595e" width="2.5" arrowSize="1" />
-<arrow v-after x1="350" y1="445" x2="718" y2="490" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-click x1="355" y1="295" x2="718" y2="230" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="420" y1="330" x2="718" y2="290" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="420" y1="360" x2="718" y2="350" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="365" y1="395" x2="718" y2="415" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow v-after x1="350" y1="425" x2="718" y2="480" color="#ff595e" width="2.5" arrowSize="1" />
 
 <div v-after class="right-24 bottom-4 w-max-38 absolute">
   <div class="flex items-center">
@@ -70,98 +70,96 @@ Durante el proceso diario de planificación y programación es necesario contar 
 
 ---
 
-# Navigation
+<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+### Epígrafe
 
-### Keyboard Shortcuts
+# ¿Qué es un CMMS?
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+## subtítulo
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
+CMMS, abreviatura en inglés de sistema computarizado de gestión de mantenimiento, es un software que ayuda a gestionar activos, programar mantenimiento y realizar seguimiento de las órdenes de trabajo.
+
+Es un software que **centraliza** la información de mantenimiento y facilita los procesos de las operaciones de mantenimiento.
+
+<br>
+<br>
+
+[IBM - ¿Qué es un CMMS?](https://www.ibm.com/ar-es/topics/what-is-a-cmms)
+
+
+---
+preload: false
+---
+
+<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
+
+### Epígrafe
+
+# Propuesta
+
+## subtítulo
+
+Aplicación web
+
+<div
+  v-if="$slidev.nav.clicks >= 0"
+  class="top-78 left-50 absolute"
+  v-motion
+  :initial="{ x: 0 }"
+  :enter="{ x: -80, transition: { delay: 1000, duration: 1000}}">
+  <flat-color-icons-manager class="text-5xl" />
+  <flat-color-icons-reading-ebook class="text-5xl" />
+  <flat-color-icons-reading class="text-5xl" />
+</div>
+
+<arrow x1="400" y1="310" x2="680" y2="200" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow x1="400" y1="325" x2="680" y2="270" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow x1="400" y1="340" x2="680" y2="330" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow x1="400" y1="355" x2="680" y2="395" color="#ff595e" width="2.5" arrowSize="1" />
+<arrow x1="400" y1="370" x2="680" y2="460" color="#ff595e" width="2.5" arrowSize="1" />
+
 <img
-  v-click
-  class="opacity-50 -bottom-9 -left-7 w-80 absolute"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="opacity-30 transform bottom-23 left-45 -rotate-10 absolute">Here!</p>
+  v-if="$slidev.nav.clicks >= 0"
+  src="images/webapp.png"
+  class="top-75 left-85 w-24 absolute"
+  v-motion
+  :initial="{ y: -20, opacity: 0 }"
+  :enter="{ y: 0, opacity: 1, transition: { delay: 1000, duration: 1000}}">
 
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
+<div class="right-34 bottom-8 w-max-38 absolute">
+  <div class="flex items-center">
+    <img src="images/informe-diario.png" class="m-1 w-18">
+    <p class="text-sm ml-2">INTRANET operaciones</p>
+  </div>
+  <div class="flex items-center">
+    <img src="images/ifs.png" class="m-1 w-18">
+    <p class="text-sm ml-2">IFS</p>
+  </div>
+  <div class="flex items-center">
+    <img src="images/documentacion.png" class="m-1 w-18">
+    <p class="text-sm ml-2">Ingenieria Documentación</p>
+  </div>
+  <div class="flex items-center">
+    <img src="images/sap.png" class="m-1 w-18">
+    <p class="text-sm ml-2">SAP</p>
+  </div>
+  <div class="flex items-center">
+    <img src="images/pq-trabajo.png" class="m-1 w-18">
+    <p class="text-sm ml-2">Carpeta compartida</p>
+  </div>
+</div>
 
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 ---
 
-# Components
+<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
-<div grid="~ gap-4 cols-2">
-<div>
+### Epígrafe
 
-You can use Vue components directly inside your slides.
+# Detalles
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
+## subtítulo
 
 
 ---

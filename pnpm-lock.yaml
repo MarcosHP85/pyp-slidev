@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/flat-color-icons': ^1.0.1
+  '@iconify-json/uim': ^1.0.2
   '@slidev/cli': ^0.27.18
   '@slidev/theme-apple-basic': ^0.20.0
   '@slidev/theme-default': '*'
@@ -11,6 +13,10 @@ dependencies:
   '@slidev/theme-apple-basic': 0.20.0
   '@slidev/theme-default': 0.21.1
   '@slidev/theme-seriph': 0.21.1
+
+devDependencies:
+  '@iconify-json/flat-color-icons': 1.0.1
+  '@iconify-json/uim': 1.0.2
 
 packages:
 
@@ -49,15 +55,26 @@ packages:
       '@iconify/types': 1.0.12
     dev: false
 
+  /@iconify-json/flat-color-icons/1.0.1:
+    resolution: {integrity: sha512-DR3HpDChS34i1KcyRHp6/VHStshztmFCdKkjGfY6Uy/R6ciTT0lb49AhHQF2cQtQx4MR5ntc9TVXnt/VqakzzQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify-json/ph/1.0.2:
     resolution: {integrity: sha512-Jfzg5CNtx/P/2fTQeISdq465rEzxj5SlyJE4tGULXSYSir0NPomfRY2zsytAOp2epvnsf1riTS44iMqPhuXXkA==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: false
 
+  /@iconify-json/uim/1.0.2:
+    resolution: {integrity: sha512-5shh/W515o7xw2FtfGdjPU5nRW2Q/U+aHcA07BrgYeLPHtY/yxDMRX9oPlLn0h+B20Q9b53imiVBR1AtJYU18w==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify/types/1.0.12:
     resolution: {integrity: sha512-6er6wSGF3hgc1JEZqiGpg21CTCjHBYOUwqLmb2Idzkjiw6ogalGP0ZMLVutCzah+0WB4yP+Zd2oVPN8jvJ+Ftg==}
-    dev: false
 
   /@iconify/utils/1.0.20:
     resolution: {integrity: sha512-J5IriR8KeANs8vIEFKWzOlOvNgZHkwqkmqaIwvqtuDbBeFHtXGfM/LYMDmjtRJ0AAa7f254qw6TK7gAibYfHUA==}
