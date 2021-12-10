@@ -1,17 +1,17 @@
 ---
 theme: apple-basic
 layout: intro-image
-image: ./images/background.png
+image: /background.png
 ---
 
 <div class="transform top-1/2 -translate-y-1/2 absolute">
-  <img src="images/atom.png" class="h-12">
+  <img src="/atom.png" class="h-12">
   <h1 class="pt-8 !text-white">Titulo de<br>presentación</h1>
   <p class="pb-12 text-gray-600">subtitulo de presentación</p>
-  <img src="images/banner.png" class="h-14">
+  <img src="/banner.png" class="h-14">
 </div>
 
-<img src="images/unida.png" class="right-10 w-12 absolute">
+<img src="/unida.png" class="right-10 w-12 absolute">
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -19,7 +19,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
+<img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
 ### Epígrafe
 
@@ -46,23 +46,23 @@ Durante el proceso diario de planificación y programación es necesario contar 
 
 <div v-after class="right-24 bottom-4 w-max-38 absolute">
   <div class="flex items-center">
-    <img src="images/informe-diario.png" class="m-1 w-18">
+    <img src="/informe-diario.png" class="m-1 w-18">
     <p class="text-sm ml-2">INTRANET operaciones</p>
   </div>
   <div class="flex items-center">
-    <img src="images/ifs.png" class="m-1 w-18">
+    <img src="/ifs.png" class="m-1 w-18">
     <p class="text-sm ml-2">IFS</p>
   </div>
   <div class="flex items-center">
-    <img src="images/documentacion.png" class="m-1 w-18">
+    <img src="/documentacion.png" class="m-1 w-18">
     <p class="text-sm ml-2">Ingenieria Documentación</p>
   </div>
   <div class="flex items-center">
-    <img src="images/sap.png" class="m-1 w-18">
+    <img src="/sap.png" class="m-1 w-18">
     <p class="text-sm ml-2">SAP</p>
   </div>
   <div class="flex items-center">
-    <img src="images/pq-trabajo.png" class="m-1 w-18">
+    <img src="/pq-trabajo.png" class="m-1 w-18">
     <p class="text-sm ml-2">Carpeta compartida</p>
   </div>
 </div>
@@ -70,7 +70,7 @@ Durante el proceso diario de planificación y programación es necesario contar 
 
 ---
 
-<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
+<img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
 ### Epígrafe
 
@@ -92,7 +92,7 @@ Es un software que **centraliza** la información de mantenimiento y facilita lo
 preload: false
 ---
 
-<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
+<img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
 ### Epígrafe
 
@@ -121,7 +121,7 @@ Aplicación web
 
 <img
   v-if="$slidev.nav.clicks >= 0"
-  src="images/webapp.png"
+  src="/webapp.png"
   class="top-75 left-85 w-24 absolute"
   v-motion
   :initial="{ y: -20, opacity: 0 }"
@@ -129,23 +129,23 @@ Aplicación web
 
 <div class="right-34 bottom-8 w-max-38 absolute">
   <div class="flex items-center">
-    <img src="images/informe-diario.png" class="m-1 w-18">
+    <img src="/informe-diario.png" class="m-1 w-18">
     <p class="text-sm ml-2">INTRANET operaciones</p>
   </div>
   <div class="flex items-center">
-    <img src="images/ifs.png" class="m-1 w-18">
+    <img src="/ifs.png" class="m-1 w-18">
     <p class="text-sm ml-2">IFS</p>
   </div>
   <div class="flex items-center">
-    <img src="images/documentacion.png" class="m-1 w-18">
+    <img src="/documentacion.png" class="m-1 w-18">
     <p class="text-sm ml-2">Ingenieria Documentación</p>
   </div>
   <div class="flex items-center">
-    <img src="images/sap.png" class="m-1 w-18">
+    <img src="/sap.png" class="m-1 w-18">
     <p class="text-sm ml-2">SAP</p>
   </div>
   <div class="flex items-center">
-    <img src="images/pq-trabajo.png" class="m-1 w-18">
+    <img src="/pq-trabajo.png" class="m-1 w-18">
     <p class="text-sm ml-2">Carpeta compartida</p>
   </div>
 </div>
@@ -153,9 +153,10 @@ Aplicación web
 
 ---
 preload: false
+clicks: 10
 ---
 
-<img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
+<img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
 ### Epígrafe
 
@@ -163,29 +164,119 @@ preload: false
 
 ## subtítulo
 
-<div class="flex">
-  <div class="border-2 p-4 flex flex-col items-center">
+<div class="flex w-full justify-center">
+  <div
+    class="flex flex-col border-2 p-4 items-center"
+    v-if="$slidev.nav.clicks >= 6"
+    v-motion
+    :initial="{ opacity: 0 }"
+    :enter="{ opacity: 1, transition: { duration: 500}}"
+  >
     <div class="pb-2">webapp backend</div>
     <carbon:bare-metal-server-02 class="text-4xl" />
   </div>
-  <div
-    v-if="$slidev.nav.clicks >= 0"
-    class="flex space-x-10 mx-10"
-    v-motion
-    :initial="{ opacity: 0 }"
-    :enter="{ opacity: 1, transition: { delay: 1000, duration: 1000}}">
-    <div class="border-2 w-4 mt-10 rounded-lg bg-blue-200 border-blue-300"></div>
-    <carbon:update-now class="top-17 relative" />
+  <div v-if="$slidev.nav.clicks >= 4" class="flex flex-col py-4 self-end">
+    <div class="flex flex-col self-start">
+      <carbon:bare-metal-server-02 class="text-4xl text-indigo-400" />
+      <div class="h-18 relative">
+        <div
+          class="flex flex-col inset-0 text-indigo-200 items-center absolute"
+        >
+          <carbon:arrow-down
+            v-motion
+            class="w-12"
+            :initial="{ opacity: 0, y: 0 }"
+            :enter="{ opacity: 1, y: 50, transition: { duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+          <carbon:arrow-up
+            v-motion
+            :initial="{ opacity: 0, y: 0 }"
+            :enter="{ opacity: 1, y: -20, transition: { duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <carbon:data-base class="text-4xl text-indigo-400" />
+      <div class="flex pr-6 text-indigo-200 w-12 items-center">
+        <carbon:arrow-left
+          v-motion
+          :initial="{ opacity: 0, x: 75 }"
+          :enter="{ opacity: 1, x: 0, transition: { delay: 2000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
+        />
+      </div>
+      <carbon:video class="transform text-2xl text-indigo-400 rotate-180" />
+      <div class="flex pr-6 text-indigo-200 w-12 items-center">
+        <carbon:arrow-left
+          v-motion
+          :initial="{ opacity: 0, x: 75 }"
+          :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
+        />
+      </div>
+    </div>
   </div>
-  <div class="border-2 p-2">
-    <div class="pb-2">IFS</div>
-    <div class="border-2 p-2">
-      <div class="pb-2">
-        <carbon:data-base /> Oracle
+  <div v-if="$slidev.nav.clicks >= 3">
+    <div
+      class="rounded-full bg-indigo-200 border-2 border-indigo-400 h-80 w-5"
+    ></div>
+  </div>
+  <div class="flex self-start">
+    <div
+      v-if="$slidev.nav.clicks >= 2"
+      class="flex self-center items-stretch"
+    >
+      <div class="flex pr-6 text-indigo-200 w-12 items-center">
+        <carbon:arrow-left
+          v-if="$slidev.nav.clicks >= 3"
+          v-motion
+          :initial="{ opacity: 0, x: 75 }"
+          :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
       </div>
-      <div class="border-2 p-2">
-        <carbon:data-table /><carbon:data-table /><carbon:data-table /><carbon:data-table />
+      <div class="rounded-md border-2 border-indigo-200 p-2">
+        <carbon:update-now 
+          v-motion
+          class="text-indigo-400"
+          :initial="{ opacity: 0, rotate: 0 }"
+          :enter="{ opacity: 1, rotate: -360, transition: { duration: 1000 }}" />
       </div>
+      <div class="w-18 relative">
+        <div
+          v-if="$slidev.nav.clicks >= 2"
+          class="flex px-4 inset-0 text-indigo-200 items-center absolute"
+        >
+          <carbon:arrow-right
+            v-motion
+            :initial="{ opacity: 0, x: -40 }"
+            :variants="{ custom: { scale: 2 } }"
+            :enter="{ opacity: 1, x: 35, transition: { delay: 1000, duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+          <carbon:arrow-left
+            v-motion
+            :initial="{ opacity: 0, x: 40 }"
+            :enter="{ opacity: 1, x: -35, transition: { delay: 1700, duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div class="rounded-md border-2">
+        <div class="p-2">IFS</div>
+        <div class="flex justify-end">
+          <div 
+              v-if="$slidev.nav.clicks >= 1"
+              class="rounded-md border-2"
+              v-motion
+              :initial="{ opacity: 0 }"
+              :enter="{ opacity: 1, transition: { duration: 500}}"
+            >
+            <div class="p-2">
+              <carbon:data-base /> Oracle
+            </div>
+            <div class="p-2">
+              <carbon:data-table /><carbon:data-table /><carbon:data-table /><carbon:data-table />
+            </div>
+          </div>
+          <div class="rounded-sm h-full bg-pink-200 border-pink-300 border-2 h-min-20 w-4"></div>
+        </div>
+      </div>
+      <carbon:arrow-left class="mx-2 text-pink-400" />
+      <flat-color-icons-reading-ebook class="text-5xl" />
     </div>
   </div>
 </div>
