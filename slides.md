@@ -152,6 +152,8 @@ Aplicación web
 
 
 ---
+preload: false
+---
 
 <img src="images/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
@@ -160,6 +162,33 @@ Aplicación web
 # Detalles
 
 ## subtítulo
+
+<div class="flex">
+  <div class="border-2 p-4 flex flex-col items-center">
+    <div class="pb-2">webapp backend</div>
+    <carbon:bare-metal-server-02 class="text-4xl" />
+  </div>
+  <div
+    v-if="$slidev.nav.clicks >= 0"
+    class="flex space-x-10 mx-10"
+    v-motion
+    :initial="{ opacity: 0 }"
+    :enter="{ opacity: 1, transition: { delay: 1000, duration: 1000}}">
+    <div class="border-2 w-4 mt-10 rounded-lg bg-blue-200 border-blue-300"></div>
+    <carbon:update-now class="top-17 relative" />
+  </div>
+  <div class="border-2 p-2">
+    <div class="pb-2">IFS</div>
+    <div class="border-2 p-2">
+      <div class="pb-2">
+        <carbon:data-base /> Oracle
+      </div>
+      <div class="border-2 p-2">
+        <carbon:data-table /><carbon:data-table /><carbon:data-table /><carbon:data-table />
+      </div>
+    </div>
+  </div>
+</div>
 
 
 ---
