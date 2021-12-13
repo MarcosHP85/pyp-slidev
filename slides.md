@@ -166,117 +166,225 @@ clicks: 10
 
 <div class="flex w-full justify-center">
   <div
-    class="flex flex-col border-2 p-4 items-center"
-    v-if="$slidev.nav.clicks >= 6"
-    v-motion
-    :initial="{ opacity: 0 }"
-    :enter="{ opacity: 1, transition: { duration: 500}}"
+    v-if="$slidev.nav.clicks >= 5"
+    class="flex items-start relative pt-12"
   >
-    <div class="pb-2">webapp backend</div>
-    <carbon:bare-metal-server-02 class="text-4xl" />
+    <div class="flex items-center">
+      <img src="/webapp.png" class="w-24">
+      <div class="absolute top-6 left-3 text-indigo-400">frontend</div>
+      <div class="w-18 relative self-center">
+        <div
+          class="flex px-4 inset-0 text-indigo-200 items-center absolute"
+        >
+          <carbon:arrow-right
+            v-motion
+            class="relative -top-1"
+            :initial="{ x: -40, scale: 0 }"
+            :enter="{ opacity: 1, x: 35, scale: 1.2, transition: { delay: 1000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+          <carbon:arrow-left
+            v-motion
+            class="relative top-1"
+            :initial="{ x: 40, scale: 0 }"
+            :enter="{ opacity: 1, x: -35, scale: 1.2, transition: { delay: 1700, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+        </div>
+      </div>
+    </div>
   </div>
-  <div v-if="$slidev.nav.clicks >= 4" class="flex flex-col py-4 self-end">
-    <div class="flex flex-col self-start">
-      <carbon:bare-metal-server-02 class="text-4xl text-indigo-400" />
+  <div
+    class="flex flex-col py-4 self-end"
+  >
+    <div
+      v-if="$slidev.nav.clicks >= 5"
+      class="flex flex-col self-start mb-12"
+    >
+      <div class="rounded-md border-2 border-dashed border-indigo-200 p-2 relative">
+        <carbon:bare-metal-server-02 class="text-4xl text-indigo-400" />
+        <div class="absolute -top-6 w-24 -left-1 text-indigo-400">backend</div>
+      </div>
       <div class="h-18 relative">
         <div
           class="flex flex-col inset-0 text-indigo-200 items-center absolute"
         >
           <carbon:arrow-down
             v-motion
-            class="w-12"
-            :initial="{ opacity: 0, y: 0 }"
-            :enter="{ opacity: 1, y: 50, transition: { duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            class="w-12 relative -left-1"
+            :initial="{ scale: 0, y: -20 }"
+            :enter="{ scale: 1.2, y: 95, transition: { duration: 800, repeat: 3, repeatDelay: 1500, repeatType: 'loop' }}" />
           <carbon:arrow-up
             v-motion
-            :initial="{ opacity: 0, y: 0 }"
-            :enter="{ opacity: 1, y: -20, transition: { duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            class="relative left-1"
+            :initial="{ scale: 0, y: 95 }"
+            :enter="{ scale: 1.2, y: -20, transition: { delay: 900, duration: 800, repeat: 3, repeatDelay: 1500, repeatType: 'loop' }}" />
         </div>
       </div>
     </div>
-    <div class="flex items-center">
-      <carbon:data-base class="text-4xl text-indigo-400" />
+    <div v-if="$slidev.nav.clicks >= 4" class="flex items-center">
+      <div class="rounded-md border-2 border-dashed border-indigo-200 p-2 relative">
+        <carbon:data-base class="text-4xl text-indigo-400" />
+        <div class="absolute top-16 w-24 -left-3 text-indigo-400">DB propia</div>
+      </div>
       <div class="flex pr-6 text-indigo-200 w-12 items-center">
         <carbon:arrow-left
           v-motion
-          :initial="{ opacity: 0, x: 75 }"
-          :enter="{ opacity: 1, x: 0, transition: { delay: 2000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
+          :initial="{ scale: 0, x: 75 }"
+          :enter="{ scale: 1.2, x: 0, transition: { delay: 900, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
         />
       </div>
-      <carbon:video class="transform text-2xl text-indigo-400 rotate-180" />
+      <div class="rounded-md border-2 border-indigo-200 p-2">
+        <carbon:video class="transform text-indigo-400 rotate-180" />
+      </div>
       <div class="flex pr-6 text-indigo-200 w-12 items-center">
         <carbon:arrow-left
           v-motion
-          :initial="{ opacity: 0, x: 75 }"
-          :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
+          :initial="{ scale: 0, x: 75 }"
+          :enter="{ scale: 1.2, x: 0, transition: { duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}"
         />
       </div>
     </div>
   </div>
   <div v-if="$slidev.nav.clicks >= 3">
     <div
-      class="rounded-full bg-indigo-200 border-2 border-indigo-400 h-80 w-5"
-    ></div>
-  </div>
-  <div class="flex self-start">
-    <div
-      v-if="$slidev.nav.clicks >= 2"
-      class="flex self-center items-stretch"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :enter="{ opacity: 1, transition: { duration: 500}}"
+      class="rounded-full bg-indigo-200 border-2 border-indigo-400 h-80 w-5 relative"
     >
-      <div class="flex pr-6 text-indigo-200 w-12 items-center">
-        <carbon:arrow-left
-          v-if="$slidev.nav.clicks >= 3"
-          v-motion
-          :initial="{ opacity: 0, x: 75 }"
-          :enter="{ opacity: 1, x: 0, transition: { delay: 1500, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
-      </div>
-      <div class="rounded-md border-2 border-indigo-200 p-2">
-        <carbon:update-now 
-          v-motion
-          class="text-indigo-400"
-          :initial="{ opacity: 0, rotate: 0 }"
-          :enter="{ opacity: 1, rotate: -360, transition: { duration: 1000 }}" />
-      </div>
-      <div class="w-18 relative">
-        <div
-          v-if="$slidev.nav.clicks >= 2"
-          class="flex px-4 inset-0 text-indigo-200 items-center absolute"
-        >
-          <carbon:arrow-right
-            v-motion
-            :initial="{ opacity: 0, x: -40 }"
-            :variants="{ custom: { scale: 2 } }"
-            :enter="{ opacity: 1, x: 35, transition: { delay: 1000, duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+      <div class="absolute bottom-20 text-indigo-700 transform -rotate-90 w-full whitespace-nowrap">message broker</div>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <div class="flex self-start">
+      <div
+        v-if="$slidev.nav.clicks >= 2"
+        class="flex self-center items-stretch"
+      >
+        <div class="flex pr-6 text-indigo-200 w-12 items-center">
           <carbon:arrow-left
+            v-if="$slidev.nav.clicks >= 3"
             v-motion
-            :initial="{ opacity: 0, x: 40 }"
-            :enter="{ opacity: 1, x: -35, transition: { delay: 1700, duration: 500, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            :initial="{ scale: 0, x: 75 }"
+            :enter="{ scale: 1.2, x: 0, transition: { duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
         </div>
+        <div class="rounded-md border-2 border-indigo-200 p-2">
+          <carbon:update-now 
+            v-motion
+            class="text-indigo-400"
+            :initial="{ opacity: 0, rotate: 0 }"
+            :enter="{ opacity: 1, rotate: -360, transition: { duration: 1000 }}" />
+        </div>
+        <div class="w-18 relative">
+          <div
+            v-if="$slidev.nav.clicks >= 2"
+            class="flex px-4 inset-0 text-indigo-200 items-center absolute"
+          >
+            <carbon:arrow-right
+              v-motion
+              class="relative -top-1"
+              :initial="{ x: -40, scale: 0 }"
+              :enter="{ opacity: 1, x: 35, scale: 1.2, transition: { delay: 1000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            <carbon:arrow-left
+              v-motion
+              class="relative top-1"
+              :initial="{ x: 40, scale: 0 }"
+              :enter="{ opacity: 1, x: -35, scale: 1.2, transition: { delay: 1700, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div class="rounded-md border-2">
+          <div class="p-2">IFS</div>
+          <div class="flex justify-end">
+            <div 
+                v-if="$slidev.nav.clicks >= 1"
+                class="rounded-md border-2"
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{ opacity: 1, transition: { duration: 500}}"
+              >
+              <div class="p-2">
+                <carbon:data-base /> Oracle
+              </div>
+              <div class="p-2">
+                <carbon:data-table class="text-pink-500" /><carbon:data-table /><carbon:data-table /><carbon:data-table />
+              </div>
+            </div>
+            <div class="rounded-sm h-full bg-pink-200 border-pink-300 border-2 h-min-20 w-4"></div>
+          </div>
+        </div>
+        <carbon:arrow-left class="mx-2 text-pink-400" />
+        <flat-color-icons-reading-ebook class="text-5xl" />
       </div>
     </div>
-    <div class="flex items-center">
-      <div class="rounded-md border-2">
-        <div class="p-2">IFS</div>
-        <div class="flex justify-end">
-          <div 
-              v-if="$slidev.nav.clicks >= 1"
-              class="rounded-md border-2"
-              v-motion
-              :initial="{ opacity: 0 }"
-              :enter="{ opacity: 1, transition: { duration: 500}}"
+    <div v-if="$slidev.nav.clicks >= 6">
+      <div
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { duration: 500}}"
+        class="flex self-start"
+      >
+        <div class="flex self-center items-stretch">
+          <div class="flex pr-6 text-indigo-200 w-12 items-center">
+            <carbon:arrow-left class="transform scale-120" />
+          </div>
+          <div class="rounded-md border-2 border-indigo-200 p-2">
+            <carbon:update-now class="text-indigo-400" />
+          </div>
+          <div class="w-18 relative">
+            <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
             >
-            <div class="p-2">
-              <carbon:data-base /> Oracle
-            </div>
-            <div class="p-2">
-              <carbon:data-table /><carbon:data-table /><carbon:data-table /><carbon:data-table />
+              <carbon:arrow-right class="relative -top-1 transform scale-120" />
+              <carbon:arrow-left class="relative top-1 transform scale-120" />
             </div>
           </div>
-          <div class="rounded-sm h-full bg-pink-200 border-pink-300 border-2 h-min-20 w-4"></div>
         </div>
+        <img src="/informe-diario.png" class="m-1 w-18">
       </div>
-      <carbon:arrow-left class="mx-2 text-pink-400" />
-      <flat-color-icons-reading-ebook class="text-5xl" />
+      <div
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { delay: 1000, duration: 800}}"
+        class="flex self-start"
+      >
+        <div class="flex self-center items-stretch">
+          <div class="flex pr-6 text-indigo-200 w-12 items-center">
+            <carbon:arrow-left class="transform scale-120" />
+          </div>
+          <div class="rounded-md border-2 border-indigo-200 p-2">
+            <carbon:update-now class="text-indigo-400" />
+          </div>
+          <div class="w-18 relative">
+            <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
+            >
+              <carbon:arrow-right class="relative -top-1 transform scale-120" />
+              <carbon:arrow-left class="relative top-1 transform scale-120" />
+            </div>
+          </div>
+        </div>
+        <img src="/documentacion.png" class="m-1 w-18">
+      </div>
+      <div
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { delay: 2000, duration: 800}}"
+        class="flex self-start"
+      >
+        <div class="flex self-center items-stretch">
+          <div class="flex pr-6 text-indigo-200 w-12 items-center">
+            <carbon:arrow-left class="transform scale-120" />
+          </div>
+          <div class="rounded-md border-2 border-indigo-200 p-2">
+            <carbon:update-now class="text-indigo-400" />
+          </div>
+          <div class="w-18 relative">
+            <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
+            >
+              <carbon:arrow-right class="relative -top-1 transform scale-120" />
+              <carbon:arrow-left class="relative top-1 transform scale-120" />
+            </div>
+          </div>
+        </div>
+        <img src="/pq-trabajo.png" class="m-1 w-18">
+      </div>
     </div>
   </div>
 </div>
