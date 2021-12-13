@@ -152,54 +152,67 @@ Aplicación web
 
 
 ---
+
+<img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
+
+### ¿Cómo se compone?
+
+# Aplicación web
+
+## arquitectura básica
+
+<div class="flex justify-center">
+  <img src="/architecture.png" class="w-[55%]">
+</div>
+
+
+---
 preload: false
-clicks: 10
+clicks: 8
 ---
 
 <img src="/atom-blue.png" class="h-12 top-14 right-14 absolute">
 
-### Epígrafe
+### ¿por qué un arquitectura basada en eventos?
 
-# Detalles
+# Arquitectura
 
-## subtítulo
+## como integrar con IFS
 
 <div class="flex w-full justify-center">
   <div
     v-if="$slidev.nav.clicks >= 5"
-    class="flex items-start relative pt-12"
+    class="flex pt-12 items-start relative"
   >
     <div class="flex items-center">
-      <img src="/webapp.png" class="w-24">
-      <div class="absolute top-6 left-3 text-indigo-400">frontend</div>
+      <img src="/webapp.png" class="border-dashed border-r-4 border-indigo-200 py-8 px-4 w-24">
+      <div class="top-9 left-3 text-indigo-400 absolute">frontend</div>
       <div class="w-18 relative self-center">
         <div
           class="flex px-4 inset-0 text-indigo-200 items-center absolute"
         >
           <carbon:arrow-right
             v-motion
-            class="relative -top-1"
+            class="-top-1 relative"
             :initial="{ x: -40, scale: 0 }"
-            :enter="{ opacity: 1, x: 35, scale: 1.2, transition: { delay: 1000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            :enter="{ opacity: 1, x: 35, scale: 1.2, transition: { duration: 800, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
           <carbon:arrow-left
             v-motion
-            class="relative top-1"
+            class="top-1 relative"
             :initial="{ x: 40, scale: 0 }"
-            :enter="{ opacity: 1, x: -35, scale: 1.2, transition: { delay: 1700, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
+            :enter="{ opacity: 1, x: -35, scale: 1.2, transition: { delay: 3000, duration: 800, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
         </div>
       </div>
     </div>
   </div>
-  <div
-    class="flex flex-col py-4 self-end"
-  >
+  <div class="flex flex-col py-4 self-end relative">
     <div
       v-if="$slidev.nav.clicks >= 5"
-      class="flex flex-col self-start mb-12"
+      class="flex flex-col mb-12 self-start"
     >
-      <div class="rounded-md border-2 border-dashed border-indigo-200 p-2 relative">
+      <div class="border-dashed rounded-md border-2 border-indigo-200 p-2 relative">
         <carbon:bare-metal-server-02 class="text-4xl text-indigo-400" />
-        <div class="absolute -top-6 w-24 -left-1 text-indigo-400">backend</div>
+        <div class="-top-6 -left-1 text-indigo-400 w-24 absolute">backend</div>
       </div>
       <div class="h-18 relative">
         <div
@@ -207,21 +220,21 @@ clicks: 10
         >
           <carbon:arrow-down
             v-motion
-            class="w-12 relative -left-1"
+            class="-left-1 w-12 relative"
             :initial="{ scale: 0, y: -20 }"
-            :enter="{ scale: 1.2, y: 95, transition: { duration: 800, repeat: 3, repeatDelay: 1500, repeatType: 'loop' }}" />
+            :enter="{ scale: 1.2, y: 95, transition: { delay: 1000, duration: 800, repeat: 3, repeatDelay: 4000, repeatType: 'loop' }}" />
           <carbon:arrow-up
             v-motion
-            class="relative left-1"
+            class="left-1 relative"
             :initial="{ scale: 0, y: 95 }"
-            :enter="{ scale: 1.2, y: -20, transition: { delay: 900, duration: 800, repeat: 3, repeatDelay: 1500, repeatType: 'loop' }}" />
+            :enter="{ scale: 1.2, y: -20, transition: { delay: 2000, duration: 800, repeat: 3, repeatDelay: 4000, repeatType: 'loop' }}" />
         </div>
       </div>
     </div>
     <div v-if="$slidev.nav.clicks >= 4" class="flex items-center">
-      <div class="rounded-md border-2 border-dashed border-indigo-200 p-2 relative">
+      <div class="border-dashed rounded-md border-2 border-indigo-200 p-2 relative">
         <carbon:data-base class="text-4xl text-indigo-400" />
-        <div class="absolute top-16 w-24 -left-3 text-indigo-400">DB propia</div>
+        <div class="top-16 -left-3 text-indigo-400 w-24 absolute">DB propia</div>
       </div>
       <div class="flex pr-6 text-indigo-200 w-12 items-center">
         <carbon:arrow-left
@@ -241,15 +254,46 @@ clicks: 10
         />
       </div>
     </div>
+    <div
+      v-if="$slidev.nav.clicks >= 7"
+      class="flex flex-col top-[40%] right-0 absolute"
+    >
+      <div
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { delay: 1000, duration: 800}}"
+        class="flex pb-2"
+      >
+        <div class="rounded-md border-2 border-indigo-200 p-2">
+          <carbon:email-new class="text-indigo-400" />
+        </div>
+        <div class="flex pr-6 text-indigo-200 w-12 items-center">
+          <carbon:arrow-left />
+        </div>
+      </div>
+      <div
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { duration: 800}}"
+        class="flex"
+      >
+        <div class="rounded-md border-2 border-indigo-200 p-2">
+          <carbon:notification-new class="text-indigo-400" />
+        </div>
+        <div class="flex pr-6 text-indigo-200 w-12 items-center">
+          <carbon:arrow-left />
+        </div>
+      </div>
+    </div>
   </div>
   <div v-if="$slidev.nav.clicks >= 3">
     <div
       v-motion
       :initial="{ opacity: 0 }"
       :enter="{ opacity: 1, transition: { duration: 500}}"
-      class="rounded-full bg-indigo-200 border-2 border-indigo-400 h-80 w-5 relative"
+      class="rounded-full bg-indigo-200 border-2 border-indigo-400 h-78 w-5 relative"
     >
-      <div class="absolute bottom-20 text-indigo-700 transform -rotate-90 w-full whitespace-nowrap">message broker</div>
+      <div class="w-full transform bottom-20 text-indigo-700 -rotate-90 absolute whitespace-nowrap">message broker</div>
     </div>
   </div>
   <div class="flex flex-col">
@@ -279,12 +323,12 @@ clicks: 10
           >
             <carbon:arrow-right
               v-motion
-              class="relative -top-1"
+              class="-top-1 relative"
               :initial="{ x: -40, scale: 0 }"
               :enter="{ opacity: 1, x: 35, scale: 1.2, transition: { delay: 1000, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
             <carbon:arrow-left
               v-motion
-              class="relative top-1"
+              class="top-1 relative"
               :initial="{ x: 40, scale: 0 }"
               :enter="{ opacity: 1, x: -35, scale: 1.2, transition: { delay: 1700, duration: 700, repeat: 2, repeatDelay: 4000, repeatType: 'loop' }}" />
           </div>
@@ -332,8 +376,8 @@ clicks: 10
           <div class="w-18 relative">
             <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
             >
-              <carbon:arrow-right class="relative -top-1 transform scale-120" />
-              <carbon:arrow-left class="relative top-1 transform scale-120" />
+              <carbon:arrow-right class="transform -top-1 scale-120 relative" />
+              <carbon:arrow-left class="transform top-1 scale-120 relative" />
             </div>
           </div>
         </div>
@@ -355,8 +399,8 @@ clicks: 10
           <div class="w-18 relative">
             <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
             >
-              <carbon:arrow-right class="relative -top-1 transform scale-120" />
-              <carbon:arrow-left class="relative top-1 transform scale-120" />
+              <carbon:arrow-right class="transform -top-1 scale-120 relative" />
+              <carbon:arrow-left class="transform top-1 scale-120 relative" />
             </div>
           </div>
         </div>
@@ -378,8 +422,8 @@ clicks: 10
           <div class="w-18 relative">
             <div class="flex px-4 inset-0 text-indigo-200 items-center absolute"
             >
-              <carbon:arrow-right class="relative -top-1 transform scale-120" />
-              <carbon:arrow-left class="relative top-1 transform scale-120" />
+              <carbon:arrow-right class="transform -top-1 scale-120 relative" />
+              <carbon:arrow-left class="transform top-1 scale-120 relative" />
             </div>
           </div>
         </div>
@@ -388,174 +432,12 @@ clicks: 10
     </div>
   </div>
 </div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ gap-2 cols-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
+<div class="flex w-full bottom-5 text-gray-500 absolute">
+  <div v-if="$slidev.nav.clicks === 1">La tabla de Auditoría de Ordenes de Trabajo, registra todos los cambios que en estas se producen.</div>
+  <div v-if="$slidev.nav.clicks === 2">Cada pocos segundos se verifica si existe un nuevo registro.</div>
+  <div v-if="$slidev.nav.clicks === 3">Los cambios que se producen en IFS son publicados en un bróker como NATS, RabbitMQ o Kafka.</div>
+  <div v-if="$slidev.nav.clicks === 4">Un subscriptor lee estos eventos y actualiza los datos necesarios en otra base de datos.</div>
+  <div v-if="$slidev.nav.clicks === 5">Esta aplicación web nos permite aplicar nuestra propia lógica de negocio y una interface a medida.</div>
+  <div v-if="$slidev.nav.clicks === 6">Es posible diseñar publicadores de eventos para otras fuentes.</div>
+  <div v-if="$slidev.nav.clicks === 7">Y subscriptores que generen otras acciones como crear notificaciones o enviar email.</div>
 </div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="mt-6 w-60 relative">
-  <div class="h-40 w-40 relative">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="top-0 right-0 bottom-0 left-0 absolute"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="top-0 right-0 bottom-0 left-0 absolute"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="top-0 right-0 bottom-0 left-0 absolute"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="top-14 left-40 text-5xl text-[#2B90B6] -z-1 absolute"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="-mb-6 grid pt-4 gap-10 grid-cols-2">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
